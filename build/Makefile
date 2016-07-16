@@ -96,6 +96,9 @@ SOURCES = $(foreach d,$(SRCDIRS),$(wildcard $(addprefix $(d)/*,$(SRCEXTS))))
 OBJS    = $(notdir $(foreach x,$(SRCEXTS), \
       $(patsubst %$(x),%.o,$(filter %$(x),$(SOURCES)))))
 
+PATH_OBJS = $(foreach x,$(SRCEXTS), \
+      $(patsubst %$(x),%.o,$(filter %$(x),$(SOURCES))))
+
 DEPS    = $(patsubst %.o,%.d,$(OBJS))
 
 .PHONY : all objs clean cleanall rebuild
@@ -132,7 +135,7 @@ all : $(PROGRAM)
 
 # Rules for producing the objects.
 #---------------------------------------------------
-objs : $(OBJS)
+objs : $(PATH_OBJS)
 
 %.o : %.c
 	$(CC) -c $(CPPFLAGS) $(CFLAGS) $<
