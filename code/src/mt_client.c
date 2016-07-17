@@ -3,10 +3,10 @@
 int main(int argc, char *argv[])
 {
 	
-	printf("char : %d\n", sizeof(char));
-	printf("short : %d\n", sizeof(short));
-	printf("int : %d\n", sizeof(int));
-	printf("long : %d\n", sizeof(long));
-	printf("long : %d\n", sizeof(long long));
+	printf("char : %lu\n", sizeof(char));
+	printf("short : %lu\n", sizeof(short));
+	printf("int : %lu\n", sizeof(int));
+	printf("long : %lu\n", sizeof(long));
+	printf("long : %lu\n", sizeof(long long));
 	return 0;
 }		
